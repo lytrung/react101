@@ -23,6 +23,10 @@ class App extends Component {
       {
         id: 4,
         text: 'Do some more react'
+      },
+      {
+        id: 5,
+        text: 'Feed the dog'
       }
     ]
   }
