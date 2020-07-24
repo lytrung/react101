@@ -28,6 +28,7 @@ class App extends Component {
   }
 
   render(){
+    //practicing git commit
     return (
       <div className="wrap">
         <div className="container">
@@ -51,7 +52,7 @@ class App extends Component {
             <div className="note new-note">
               <form className="note-body">
                   <div className="form-group">
-                    <label htmlor="note-input">New note</label>
+                    <label htmlFor="note-input">New note</label>
                     <input type="text" className="form-control" id="note-input"/>
                   </div>
             
