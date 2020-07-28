@@ -17,18 +17,6 @@ class App extends Component {
           id: 2,
           text: 'Make tea'
         },
-        {
-          id: 3,
-          text: 'Do some react'
-        },
-        {
-          id: 4,
-          text: 'Do some more react'
-        },
-        {
-          id: 5,
-          text: 'Feed the dog'
-        }
       ],
       noteInputValue : ''
     }
@@ -52,6 +40,16 @@ class App extends Component {
       noteInputValue : ''
     })
   }
+  handleNoteDelete = (e)=>{
+    var noteIdToDelete = parseInt(e.target.id)
+    var notes = this.state.notes
+
+    var filteredNotes = notes.filter((item)=>{
+      return item.id != noteIdToDelete
+    })
+
+    this.setState({notes:filteredNotes})
+  }
 
   render(){
 
@@ -64,7 +62,7 @@ class App extends Component {
                 return (
                   <div className="note" key={note.id}>
                     <div className="note-body">
-                      <i className="far fa-times-circle note-remove"></i>
+                      <i id={note.id} className="far fa-times-circle note-remove" onClick={this.handleNoteDelete}></i>
                       <div className="note-text">
                         {note.text}
                       </div>
